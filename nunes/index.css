@@ -1,0 +1,513 @@
+/* Reset de estilos para garantir consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para o header (barra de navegação) */
+header {
+    background-color: #000000;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 1rem;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #ff9900;
+}
+
+/* Estilos para o botão de menu responsivo */
+#menu-show {
+    display: none;
+}
+
+label[for="menu-show"] {
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+/* Estilos para a seção hero */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero-image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.hero-image {
+    max-width: 80%; /* Ajuste o tamanho da imagem para 80% da largura do contêiner */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para a seção de localização */
+.location {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.map-container iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+    border: 0;
+}
+
+/* Estilos para a seção de cardápio */
+.menu-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.menu-section h1 {
+    margin-bottom: 40px; /* Adiciona espaçamento abaixo do título */
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.menu-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.menu-item h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.menu-item strong {
+    font-size: 1.2rem;
+    color: #000;
+}
+
+.menu-item label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.menu-item input {
+    width: 50px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.menu-item button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff9900;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu-item button:hover {
+    background-color: #e67e22;
+}
+
+/* Estilo para o modal */
+.modal {
+    display: block; /* Mostrar o modal por padrão */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo mais escuro */
+    backdrop-filter: blur(5px); /* Efeito de desfoque */
+}
+
+/* Estilo para o conteúdo do modal */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 90%;
+    max-width: 500px; /* Largura máxima */
+    text-align: center; /* Centralizar texto */
+}
+
+/* Estilo para o botão de fechar */
+.close {
+    color: #333;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 95%;
+        margin: 20% auto;
+    }
+}
+
+
+/* Estilos para o ícone do carrinho flutuante */
+.cart-icon {
+    position: fixed;
+    top: 80px; /* Ajuste a posição para não sobrepor o botão de contato */
+    right: 20px;
+    background-color: #ff9900;
+    color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.cart-icon:hover {
+    background-color: #e67e22;
+}
+
+.cart-icon i {
+    font-size: 24px; /* Tamanho do ícone */
+}
+
+.cart-icon span {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #e60000;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+/* Estilos para a barra lateral do carrinho */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s;
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.cart-sidebar.active {
+    right: 0;
+}
+
+.cart-sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.cart-sidebar .close-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#cart-items li {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cart-items li button {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#cart-items li button:hover {
+    background-color: #e60000;
+}
+
+.cart-total {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.btn-enviar {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff9900;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-enviar:hover {
+    background-color: #e67e22;
+}
+
+/* Estilos para a seção de contato */
+.contact-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.contact-section h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff9900;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #e67e22;
+}
+
+.contact-info {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #666;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-info i {
+    color: #ff9900;
+    margin-right: 10px;
+}
+
+.hero-image-container {
+    margin-bottom: 40px; /* Ajuste a distância conforme necessário */
+}
+
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #e67e22;
+}
+
+.cta-buttons a {
+    text-decoration: none;
+}
+.cta-button {
+    padding: 10px 20px;
+    background-color:#ff9900;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+@media (max-width: 600px) {
+    .cta-buttons {
+        flex-direction: column;
+    }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000000;
+    }
+    .menu li {
+        margin: 0;
+        text-align: center;
+        padding: 10px 0;
+    }
+    #menu-show:checked + label + .menu {
+        display: flex;
+    }
+    label[for="menu-show"] {
+        display: block;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr); /* Dois itens lado a lado */
+    }
+
+    .cart-sidebar {
+        width: 100%; /* Ajuste o tamanho da barra lateral em dispositivos móveis */
+        right: -100%; /* Inicialmente fora da tela */
+    }
+
+    .cart-sidebar.active {
+        right: 0; /* Totalmente visível quando ativo */
+    }
+
+    .hero-image {
+        max-width: 100%; /* Ajuste o tamanho da imagem para 100% da largura do contêiner em dispositivos móveis */
+    }
+
+    .contact-section {
+        padding: 30px 10px;
+    }
+
+    .contact-form {
+        padding: 15px;
+    }
+
+    .contact-form button {
+        font-size: 1rem;
+    }
+
+    .contact-info {
+        font-size: 0.9rem;
+    }
+}

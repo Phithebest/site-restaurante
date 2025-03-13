@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="nunes.png" type="image/x-icon">
+    <title>Contato - Nunes</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">NUNES</a>
+        <input type="checkbox" id="menu-show">
+        <label for="menu-show"><i class="fas fa-bars"></i></label>
+        <ul class="menu">
+            <li><a href="menu.html">Cardápio</a></li>
+            <li><a href="location.html">Localização</a></li>
+            <li><a href="contact.html">Contato</a></li>
+        </ul>
+    </header>
+
+    <section class="contact-section">
+        <h1>Fale Conosco</h1>
+        <form class="contact-form" action="https://formsubmit.co/osmarvanessa2018@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+            <input type="hidden" name="_captcha" value="false">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+        <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> R: Jornalista Rui Ademar Rodrigues 235, trailer de lanches, São Domingos, Navegantes - SC, 88370-777</p>
+            <p><i class="fas fa-phone"></i> (47) 9 9632-0520</p>
+            <p><i class="fas fa-envelope"></i> osmarvanessa2018@gmail.com</p>
+        </div>
+    </section>
+</body>
+</html>
